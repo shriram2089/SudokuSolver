@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+</head>
+<body>
+    <h1>Sudoku Solver</h1>
+    <form action="/solve" method="post">
+        <textarea name="board" rows="9" cols="20" placeholder="Enter your Sudoku puzzle, each row on a new line, 0 for empty cells"></textarea><br>
+        <button type="submit">Solve</button>
+    </form>
+    {% if solved is not none %}
+        {% if solved %}
+            <h2>Solution:</h2>
+            <pre>{{ board }}</pre>
+        {% else %}
+            <h2>No solution exists</h2>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
